@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Flasky - Page Not Found{% endblock %}
+{% block page_content %}
+    <h1>Hello World</h1>
+    <h3> Welcome {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h3>
+    <p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+    <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+
+    <h1>Messages</h1>
+    <ul>
+    {% if message %}
+        {%for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    {% else %}
+        <li><p>No Messages to display yet :(</p></li>
+    {% endif %}
+    </ul>
+    {{ wtf.quick_form(form, horizontal_columns=('lg',2,10)) }}
+
+{% endblock %}

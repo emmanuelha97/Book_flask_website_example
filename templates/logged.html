@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Flasky - Page Not Found{% endblock %}
+{% block page_content %}
+    {% if logged_in_status %}
+        <h1>Hello World</h1>
+        <h3> Welcome {{ username }}!</h3>
+        <h3> You new password was set to {{ password }}</h3>
+        <p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+        <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>
+    {% else %}
+        <h2> You Need to log in. You do not belong here! Hacker!</h2>
+    {% endif %}
+{% endblock %}

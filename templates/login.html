@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Flasky{% endblock %}
+{% block content %}
+    <div class="container mx-auto" style="width: 200px;">
+        <div class="container">
+            <h1>Login Page</h1>
+        </div>
+
+        {#    <div class="mx-auto" style="width: 200px;">#}
+        <form class="col-auto" method="post">
+            <div class="col-auto">
+                {{ wtf.form_field(form.username, class_="form-control", id="inputEmail2", form_type="text", placeholder="email@example.com") }}
+            </div>
+            <div class="col-auto">
+                {{ wtf.form_field(form.password, class_="form-control", id="inputPassword" , placeholder="Password", type="password") }}
+            </div>
+            <div class="col-auto">
+                {{ form.csrf_token }}
+                {{ wtf.form_field(form.submit, class_="btn btn-primary mb-3") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}
